@@ -19,6 +19,6 @@ GSAS&EXPGUI的下载可以通过[这里](http://www.ccp14.ac.uk/solution/gsas/)�
 
 >下载链接：
 
->*GSAS&EXPGUI: http://www.ccp14.ac.uk/solution/gsas/
+>* GSAS&EXPGUI: http://www.ccp14.ac.uk/solution/gsas/
 
->*Fullprof_suite: https://www.ill.eu/sites/fullprof/php/downloads.html
+>* Fullprof_suite: https://www.ill.eu/sites/fullprof/php/downloads.html
