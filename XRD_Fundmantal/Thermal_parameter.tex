@@ -1,0 +1,24 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[UTF8]{ctex}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\begin{document}
+\begin{section}{温度因子}
+
+温度因子（Thermal parameters），又称原子位移因子（Atomic displacement parameters），用来描述原子的热振动引起原子散射能力的减弱。
+
+晶体中的原子在平衡位置附近不停的振动，并且振动幅度随着温度的增加而增大。原子热振动幅度越大，对X射线的散射能力就会越弱。德拜首先提出热运动对衍射强度的影响之后，沃勒又进行了进一步修正，给出了热振动对衍射强度减弱的系数为$e^{-2B\sin^2\theta/\lambda^2}$，其中$B$就是温度因子。
+
+温度因子$B$与原子振幅$u$的关系为：$B=8\pi^2\overline{u^2}$。令$U=\overline{u^2}$，则有$B=8\pi U$，因此$U$也能够代表温度对原子散射能力的影响。$B$值一般认为在1.0 \AA$^2$左右：对于金属氧化物中结合比较紧密的原子，它的典型值约为0.5 \AA$^2$，然而对于有机分子等结构，典型值增加到3$\sim$5 \AA$^2$。对一个结构良好的化合物，其中原子的振动接近于各向同性，因此在XRD精修时主要考虑各向同性温度因子$B_\text{iso}/U_\text{iso}$就足够了。
+
+加入温度对原子散射能力的影响之后，完整的结构因子可以表达为：
+\[F=\sum_n f_n N_n \exp\{2\pi \mathrm{i} (hx+ky+lz)\}\exp(-2B\sin^2\theta/\lambda^2)\]
+
+其中$N_n$表示原子在某个位置的占有率。
+
+\end{section}
+\end{document}

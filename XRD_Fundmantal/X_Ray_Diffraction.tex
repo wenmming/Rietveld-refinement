@@ -1,0 +1,37 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[UTF8]{ctex}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\begin{document}
+\begin{section}{X射线衍射强度}
+由于实际晶体不具有理想的完整性，同时入射X射线也不可能完全平行和单色，因此测量晶体某一$(hkl)$晶面的某一位置时的衍射强度对于晶体结构的测定未必有意义。对于多晶衍射，通常所测量的是某一衍射面$(hkl)$的积分衍射强度$I_\Sigma$。对于取向完全随机的粉末试样，其衍射峰如图\ref{fig:integralIntensity}所示。图中的阴影部分表示积分强度。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=200pt]{integralIntensity.pdf}
+\caption{粉末衍射峰示意图，阴影面积为积分强度}
+\label{fig:integralIntensity}
+\end{figure}
+
+多晶X射线衍射的积分强度表达式为：\[I_\Sigma=\dfrac{N^2e^4\lambda^3}{32\pi Rm_0^2c^4}I_0v\cdot M\cdot L_P\cdot F^2\cdot e^{-2B \sin^2\theta/\lambda^2}\cdot A^*(\theta)\cdot (PO)\]
+
+式中：
+
+\[\begin{array}{llll}
+N & \text{单位体积内的晶胞数} & \lambda & \text{X射线波长}\\
+R & \text{照相机（或衍射仪）半径} & M & \text{多重性因子}\\
+e & \text{电子电荷量} & L_P & \text{洛伦兹偏振因子}\\
+m_0 & \text{电子静质量} & F & \text{结构因子}\\
+c & \text{光速} & B & \text{热学参数}\\
+v & \text{受X射线照射的试样体积} & A^*(\theta) & \text{吸收因子$A(\theta)$的倒数}\\
+I_0 & \text{入射X射线的强度} & (PO) & \text{择优取向因子}
+\end{array}\]
+
+
+令$K=\tfrac{N^2e^4\lambda^3}{32\pi Rm_0^2c^4}I_0v$，在同一实验室条件下$K$为常数，衍射的相对积分强度$I$的表达式为：\[I=M\cdot L_P\cdot F^2\cdot e^{-2B \sin^2\theta/\lambda^2}\cdot A^*(\theta)\cdot (PO)\]
+\end{section}
+\end{document}
