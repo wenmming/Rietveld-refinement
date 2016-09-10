@@ -1,6 +1,10 @@
 # Rietveld-refinement
 Something about Rietveld refinement of XRD
 
+[Guide for GSAS](https://github.com/wenmming/Rietveld-refinement/blob/master/GSAS/GSAS.html)
+
+[Guide for Fullprof](https://github.com/wenmming/Rietveld-refinement/blob/master/Fullprof/)
+
 最近做了几个样品的精修，对于之前没有太在意或者有疑问的一些细节进行了查阅，了解了更多关于粉末X射线衍射及精修的知识。
 
 此外，在使用GSAS的时候，也学习使用了Fullprof套件的精修过程。
