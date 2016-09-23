@@ -1,1 +1,21 @@
 这个可以有
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\Background\shell
+
+EXPGUI
+
+"E:\GSAS\expgui.ico"
+"E:\GSAS\startEXPGUI new.bat"
+
+StartEXPGUI.bat
+```
+@echo off
+
+@REM Get this script's directory; make sure that the path ends 
+@REM    with a single backslash
+@set gsasloc=%~dp0\*
+@set gsasloc=%gsasloc:\\*=\*%
+@set gsasloc=%gsasloc:\*=\%
+@
+start "" "%gsasloc%exe\ncnrpack.exe" "%gsasloc%expgui\expgui" %1
+```
