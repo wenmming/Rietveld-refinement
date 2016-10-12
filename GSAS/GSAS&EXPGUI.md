@@ -5,11 +5,34 @@
 
 这里是使用EXPGUI界面进行GSAS的精修操作。
 
+>下载链接：
+
+>* GSAS&EXPGUI: http://www.ccp14.ac.uk/solution/gsas/
+
+## 开始之前
+
+通过桌面快捷方式打开EXPGUI程序的时候，默认的文件路径是软件安装的位置。但是很多时候数据会放在不同的文件夹下，每次打开程序选取数据比较麻烦，这里提供一个通过修改注册表让你可以随处打开程序的办法。另外新版的EXPGUI程序在运行的时候会弹出一个CMD窗口，手动关闭并不影响后续操作，这里也提供一个修改程序文件的方法自动关闭CMD窗口。
+
+`WIN`+`R`打开运行窗口，输入`regedit`打开注册表。在注册表中找到`HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\Background\shell`位置，在`shell`下新建项，命名为`EXPGUI`，然后在`EXPGUI`下再新建项，命名为`command`。将`command`的默认值双击打开，修改为`EXPGUI`的运行脚本路径，例如`"E:\GSAS\startEXPGUI.bat"`。此外，你还可以选中注册表中的`EXPGUI`项，然后在右侧的白板处右键`新建`->`字符串值`，将其命名为`Icon`后，修改键值为`EXPGUI`的图标，如`"E:\GSAS\expgui.ico"`。这时回到桌面，你就可以在右键菜单中看到一个`EXPGUI`的选项，通过点击它就可以在任何一个文件夹中启动`EXPGUI`。如果没有成功，请检查你的软件版本。
+
+想要消除打开软件时产生的CMD窗口，可以修改原本的`StartEXPGUI.bat`代码，在最后一行的`start`后面添加` "" `，前后都有空格。这样就可以了，修改之后的文件如下：
+```batch
+@echo off
+
+@REM Get this script's directory; make sure that the path ends 
+@REM    with a single backslash
+@set gsasloc=%~dp0\*
+@set gsasloc=%gsasloc:\\*=\*%
+@set gsasloc=%gsasloc:\*=\%
+@
+start "" "%gsasloc%exe\ncnrpack.exe" "%gsasloc%expgui\expgui" %1
+```
+
 ## 数据准备
 
 在使用GSAS进行精修之前，需要把获得的衍射数据转换成GSAS所需要的数据格式。转换的方法很多，不再赘述。
 
-除了实验数据之外，还要准备精修所用的晶体模型，一般是通过`FindIt`等软件查找同种或者相近的同构化合物，并导出`cif`文件的方法获得。
+除了实验数据之外，还要准备精修所用的晶体模型，一般是通过`FindIt`等软件查找同种或者相近的同构化合物，并导出`cif`文件的方法获得。这里再推荐一个在线的开放晶体数据库Crystallography Open Database: http://www.crystallography.net/cod/search.html 。当你在`FindIt`中找不到需要的数据时，可以来这里试着找一下。
 
 另外，我们在精修之前还需要一份仪器文件，用来描述衍射仪的实验参数，主要包含X射线波长、狭缝宽度等内容。可以向进行测试平台索要，或者拷贝之前使用的仪器文件。文末附上一份仪器文件供参考。
 
