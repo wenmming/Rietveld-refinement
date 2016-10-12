@@ -5,9 +5,13 @@
 
 这里是使用EXPGUI界面进行GSAS的精修操作。
 
->下载链接：
+**下载链接：**
 
->* GSAS&EXPGUI: http://www.ccp14.ac.uk/solution/gsas/
+>* https://subversion.xray.aps.anl.gov/EXPGUI/install/SetupGSAS_EXPGUI.exe
+
+or
+
+>* http://11bm.xray.aps.anl.gov/downloads/gsas/svnload/gsas+expgui_svn.zip
 
 ## 开始之前
 
@@ -15,7 +19,7 @@
 
 `WIN`+`R`打开运行窗口，输入`regedit`打开注册表。在注册表中找到`HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\Background\shell`位置，在`shell`下新建项，命名为`EXPGUI`，然后在`EXPGUI`下再新建项，命名为`command`。将`command`的默认值双击打开，修改为`EXPGUI`的运行脚本路径，例如`"E:\GSAS\startEXPGUI.bat"`。此外，你还可以选中注册表中的`EXPGUI`项，然后在右侧的白板处右键`新建`->`字符串值`，将其命名为`Icon`后，修改键值为`EXPGUI`的图标，如`"E:\GSAS\expgui.ico"`。这时回到桌面，你就可以在右键菜单中看到一个`EXPGUI`的选项，通过点击它就可以在任何一个文件夹中启动`EXPGUI`。如果没有成功，请检查你的软件版本。
 
-想要消除打开软件时产生的CMD窗口，可以修改原本的`StartEXPGUI.bat`代码，在最后一行的`start`后面添加` "" `，前后都有空格。这样就可以了，修改之后的文件如下：
+想要消除打开软件时产生的CMD窗口，可以修改原本的`StartEXPGUI.bat`代码，在最后一行的前面添加`start "" `，注意加空格。这样就可以了，修改之后的文件如下：
 ```
 @echo off
 
